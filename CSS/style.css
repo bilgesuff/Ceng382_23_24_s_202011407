@@ -1,0 +1,64 @@
+  .h1{
+   text-align: center;
+  }
+  #fname{
+    margin-top: 8px;
+    margin-bottom: 3px;
+    margin-bottom: 3px;
+    padding-top: 3px;
+    width: 250px;
+  }
+  #password{
+    margin-top: 8px;
+    margin-bottom: 3px;
+    padding-top: 3px;
+    width: 250px;
+  }
+  #email{
+    margin-top: 8px;
+    margin-bottom: 3px;
+    padding-top: 3px;
+    width: 250px;
+  }
+  #cpassword{
+    margin-top: 8px;  
+    margin-bottom: 3px;  
+    padding-top: 3px;
+    width: 250px;
+  }
+  .b{
+    text-align: center;
+    padding-top: 20px;
+    width: 350px;
+    height: 300px;
+    background-color:rgb(160, 162, 163);
+    margin:auto;
+  }
+  #button {
+  background-color: rgb(54, 143, 54);     
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  width: 250px;
+}
+ #button:hover{
+     background-color: brown;
+}
+table{
+    margin: auto;
+    border: 2px solid;
+    border-spacing: 0;
+}
+th,td{
+    padding:10px;
+    text-align:left;
+    border:2px solid;
+}
+tr:hover{
+    background-color: cyan;
+}
+
