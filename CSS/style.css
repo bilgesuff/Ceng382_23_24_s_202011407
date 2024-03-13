@@ -45,9 +45,7 @@
   margin: 4px 2px;
   width: 250px;
 }
- #button:hover{
-     background-color: brown;
-}
+ 
 table{
     margin: auto;
     border: 2px solid;
@@ -58,7 +56,5 @@ th,td{
     text-align:left;
     border:2px solid;
 }
-tr:hover{
-    background-color: cyan;
-}
+
 
