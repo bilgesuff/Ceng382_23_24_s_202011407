@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gvhAoouAfz5V6hUe/R1pRe0yc0VQWsoYFAE3mgPITrA=",
+  "Hash": "3A+xlObRxkHiYq1PMc30oH0M3HMrGwZCPPEtNL7QOtI=",
   "Source": "lab4",
   "BasePath": "_content/lab4",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\YENİCV2.pdf",
+      "SourceId": "lab4",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\",
+      "BasePath": "_content/lab4",
+      "RelativePath": "js/YENİCV2.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\YENİCV2.pdf"
     },
     {
       "Identity": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
