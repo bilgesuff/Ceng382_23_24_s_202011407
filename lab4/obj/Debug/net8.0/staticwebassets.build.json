@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3A+xlObRxkHiYq1PMc30oH0M3HMrGwZCPPEtNL7QOtI=",
+  "Hash": "kw94SkA4o894rhltCb0PbWwVlvHqptiLkMKOy6M+cpA=",
   "Source": "lab4",
   "BasePath": "_content/lab4",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\css\\button.css",
+      "SourceId": "lab4",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\",
+      "BasePath": "_content/lab4",
+      "RelativePath": "css/button.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\button.css"
     },
     {
       "Identity": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\css\\carousel.css",
@@ -150,6 +169,25 @@
       "OriginalItemSpec": "wwwroot\\js\\bootstrap.bundle.min.js"
     },
     {
+      "Identity": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\CENG 382 LAB 5.pdf",
+      "SourceId": "lab4",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\",
+      "BasePath": "_content/lab4",
+      "RelativePath": "js/CENG 382 LAB 5.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CENG 382 LAB 5.pdf"
+    },
+    {
       "Identity": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\color-modes.js",
       "SourceId": "lab4",
       "SourceType": "Discovered",
@@ -167,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\color-modes.js"
+    },
+    {
+      "Identity": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\hidden.js",
+      "SourceId": "lab4",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\",
+      "BasePath": "_content/lab4",
+      "RelativePath": "js/hidden.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\hidden.js"
     },
     {
       "Identity": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\site.js",

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head><script src="~/js/color-modes.js"></script>
 
     <meta charset="utf-8" />
@@ -7,8 +7,9 @@
     <title>@ViewData["Title"] - lab4</title>
     <link href="~/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="~/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/button.css">
     <style>
-      .bd-placeholder-img {
+      .bd-placeholder-img {        
         font-size: 1.125rem;
         text-anchor: middle;
         -webkit-user-select: none;
@@ -107,9 +108,13 @@
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
-          <li>
-              <a <button>class="nav-link" href="#">Link</button></a>
-          </li>
+          <li class="nav-item"> 
+              <a class="nav-link" href="#">Link</a>
+              
+          </li>    
+          <li class="nav-item">
+              <a class="nav-link active" asp-area="" asp-asp-page="/jspage"></a>
+          </li>                
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -130,6 +135,6 @@
 
     @await RenderSectionAsync("Scripts", required: false)
     <script src="~/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+  <script src="~/js/hidden.js"></script>
 </body>
 </html>

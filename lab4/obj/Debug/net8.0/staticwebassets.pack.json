@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\css\\button.css",
+      "PackagePath": "staticwebassets\\css\\button.css"
+    },
+    {
       "Id": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\css\\carousel.css",
       "PackagePath": "staticwebassets\\css\\carousel.css"
     },
@@ -21,6 +25,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\CENG 382 LAB 5.pdf",
+      "PackagePath": "staticwebassets\\js\\CENG 382 LAB 5.pdf"
+    },
+    {
       "Id": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\YENİCV2.pdf",
       "PackagePath": "staticwebassets\\js\\YENİCV2.pdf"
     },
@@ -31,6 +39,10 @@
     {
       "Id": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\color-modes.js",
       "PackagePath": "staticwebassets\\js\\color-modes.js"
+    },
+    {
+      "Id": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\hidden.js",
+      "PackagePath": "staticwebassets\\js\\hidden.js"
     },
     {
       "Id": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab.1\\Ceng382_23-24_202011407\\lab4\\wwwroot\\js\\site.js",
