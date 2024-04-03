@@ -12,15 +12,11 @@ public class Room{
      public string roomId{get; set;}
 
     [JsonPropertyName("roomName")]
-
     public string roomName {get; set;}
 
       [JsonPropertyName("capacity")]
 
     public int capacity {get; set;}
-
-
-
 
 }
 public class ReservationHandler{
@@ -28,69 +24,83 @@ private  Reservation[,] reservations;
 public ReservationHandler(){
     reservations = new Reservation[7,8];
 }
-
-public void addReservation(Reservation r){
-int dayOfWeek = ((int)r.date.DayOfWeek + 6) % 7; // 0 for Monday, 6 for Sunday
-int slot = (r.time.Hour - 9 );
-     if (slot >= 0 && slot < 8)
-    {
-        if (reservations[dayOfWeek, slot] == null)
+public  bool  addReservation(Reservation r){
+        int dayIndex = (int)r.date.DayOfWeek - 1; // monday is 1
+        if (dayIndex == -1) 
         {
-            reservations[dayOfWeek, slot] = r; 
+            dayIndex = 6;
+        }
+
+        int timeSlot = r.time.Hour - 9;
+
+        if (dayIndex < 0 || dayIndex > 6 || timeSlot < 0 || timeSlot > 7)
+        {
+            Console.WriteLine("Invalid reservation time.");
+            return false;
+        }
+
+        if (reservations[dayIndex, timeSlot] == null)
+        {
+            reservations[dayIndex, timeSlot] = r;
             Console.WriteLine("Reservation added successfully.");
+            return true;
         }
         else
         {
-            Console.WriteLine("The slot is already reserved. Please try again for another hour!");
+            Console.WriteLine(" Slot is already reserved.");
+            return false;
         }
-    }
-    else
-    {
-        Console.WriteLine("Invalid time.");
-    }
 }
-public void deleteReservation(Reservation r){
-    int dayOfWeek = ((int)r.date.DayOfWeek + 6) % 7;
-    int slot = r.time.Hour - 9;
-    if(dayOfWeek >= 0 && dayOfWeek < 7 && slot >= 0 && slot < 8 ){
-        if(reservations[dayOfWeek, slot]!= null && reservations[dayOfWeek, slot] == r){
-            reservations[dayOfWeek, slot] = null;
-            Console.WriteLine("Reservation deleted successfully.");
+public bool deleteReservation(Reservation r){
+        int dayIndex = (int)r.date.DayOfWeek - 1; 
+        if (dayIndex == -1) 
+        {
+            dayIndex = 6;
         }
-        else{
-            Console.WriteLine("No reservation found to delete.");
-        }
-    }
-    else{
-        Console.WriteLine("Invalid day or slot.");
-    }
 
+        int timeSlot = r.time.Hour - 9;
+
+        if (dayIndex < 0 || dayIndex > 6 || timeSlot < 0 || timeSlot > 7)
+        {
+            Console.WriteLine("Invalid reservation time.");
+            return false;
+        }
+
+        if (reservations[dayIndex, timeSlot] != null)
+        {
+            reservations[dayIndex, timeSlot] = null;
+            Console.WriteLine("Reservation deleted successfully.");
+            return true;
+        }
+        else
+        {
+            Console.WriteLine("No reservation found.");
+            return false;
+        }
 }
-public void displayWeeklySchedule(){
-        DateTime startOfWeek = new DateTime(2024,3,25);
+public void WeeklySchedule(){
+        DateTime startWeek = new DateTime(2024,3,25);
         DateTime endOfWeek = new DateTime(2024,3,31);
-        Console.WriteLine("Reservation List between the 25 March - 31 March 2024: ");
-        for(int i=0; i<reservations.GetLength(0); i++){ // loop for days
-            string dayName;
+        Console.WriteLine("Reservation List between 25 - 31 March 2024: ");
+        for(int i=0; i<reservations.GetLength(0); i++){ 
+            string Nameofday;
             if(i==6){
-                dayName = DayOfWeek.Sunday.ToString();
+                Nameofday = DayOfWeek.Sunday.ToString();
             }
             else{
-                 dayName = ((DayOfWeek)(i+1)).ToString();
+                Nameofday= ((DayOfWeek)(i+1)).ToString();
             }
-            for(int j=0; j<reservations.GetLength(1); j++){ // loop for hours
-            
+            for(int j=0; j<reservations.GetLength(1); j++){             
                 if(reservations[i,j] != null){
-                   DateTime reservationDate = reservations[i,j].date;
-                  
-                   if(reservationDate >= startOfWeek && reservationDate <= endOfWeek){
-                         Console.WriteLine($"Day {dayName}, Hour {j+9}: 00 : Reserved by {reservations[i,j].reserverName} in room {reservations[i,j].room.roomName}");
+                   DateTime reservationDate = reservations[i,j].date;                  
+                   if(reservationDate >= startWeek && reservationDate <= endOfWeek){
+                         Console.WriteLine($"Day {Nameofday}, Hour {j+9}: 00 : Reserved by {reservations[i,j].reserverName} in room {reservations[i,j].room.roomName}");
                    }
                   
                 }
             
                 else{
-                    Console.WriteLine($"Day {dayName}, Hour {j+9}: 00 : There is no reservation.");
+                    Console.WriteLine($"Day {Nameofday}, Hour {j+9}: 00 : There is no reservation.");
                 }
             }
         }
@@ -118,9 +128,8 @@ class Program {
         ReservationHandler handler = new ReservationHandler();
         DateTime inputDate, inputTime;
         string name;
-        int randomIndex3;
-        // path to json
-        // toDo inside try catch
+        int rand;
+        
         try{
         string jsonFilePath = "Data.json";
         string jsonString = File.ReadAllText(jsonFilePath);
@@ -137,11 +146,11 @@ class Program {
                 Console.WriteLine($"Room ID: {room.roomId}, Name: {room.roomName}, Capacity {room.capacity}");
             }
         } */
-        int randomIndex = random.Next(roomData.Rooms.Length);
+         rand = random.Next(roomData.Rooms.Length);
 
-        Room room = roomData.Rooms[randomIndex];
-        int randomIndex2 = random.Next(roomData.Rooms.Length);
-        Room room2 = roomData.Rooms[randomIndex2];
+        Room room = roomData.Rooms[rand];
+        int rand2 = random.Next(roomData.Rooms.Length);
+        Room room2 = roomData.Rooms[rand2];
 
         Reservation reservation1 = new Reservation{
             time = new DateTime(2024,3,25,9,0,0),
@@ -168,7 +177,7 @@ class Program {
                 Console.WriteLine("Enter a Month: ");
                 while(!int.TryParse(Console.ReadLine(), out month) || month < 1 || month > 12)
                 {
-                    Console.WriteLine("Invalid input. Please enter a valid month (1-12):");
+                    Console.WriteLine("Invalid . Please enter a valid month (1-12):");
                 }
 
                 Console.WriteLine("Enter a Day: ");
@@ -181,20 +190,19 @@ class Program {
                 while(!int.TryParse(Console.ReadLine(), out year) || year < 2024)
                 {
                     Console.WriteLine("Invalid input. Please enter a valid year:");
-                }
-               
+                }               
 
                 
-                Console.WriteLine("Enter hour of the reservation: ");
+                Console.WriteLine("Enter hour of  reservation: ");
                 while(!int.TryParse(Console.ReadLine(), out hour) || hour < 9 || hour > 16)
                 {
-                    Console.WriteLine("Invalid input. Please enter a valid hour (9-16):");
+                    Console.WriteLine("Invalid. Please enter a valid hour (9-16):");
                 }
             try{
+                rand= random.Next(roomData.Rooms.Length);
                 inputDate = new DateTime(year,month,day);
                 inputTime = new DateTime(year,month,day,hour,0,0);
-                randomIndex3 = random.Next(roomData.Rooms.Length);
-                Room room3 = roomData.Rooms[randomIndex3];
+                Room room3 = roomData.Rooms[rand];
                 Reservation r = new Reservation{
                     reserverName = name,
                     time = inputTime,
@@ -218,7 +226,7 @@ class Program {
 
         handler.addReservation(reservation1);
         handler.addReservation(reservation2);
-        handler.displayWeeklySchedule();
+        handler.WeeklySchedule();
         }
 
 
