@@ -221,6 +221,10 @@ class Program {
             else if(selection == 2){
                 break;
             }
+             else
+            {
+                Console.WriteLine("Invalid selection.");
+            }
         }
       
 
