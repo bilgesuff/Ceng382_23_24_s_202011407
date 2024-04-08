@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection.Metadata;
+using System.Runtime.Serialization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.VisualBasic;
@@ -7,19 +9,15 @@ public class RoomData{
     [JsonPropertyName("Room")]
     public  Room[] Rooms {get; set;}
 }
-public class Room{
-     [JsonPropertyName("roomId")]
-     public string roomId{get; set;}
+public record Room(
+    [property: JsonPropertyName("roomId")] string romId,
+    [property: JsonPropertyName("roomName")] string RoomName,
+    [property: JsonPropertyName("capacity")] int Capacity);
 
-    [JsonPropertyName("roomName")]
-    public string roomName {get; set;}
-
-      [JsonPropertyName("capacity")]
-
-    public int capacity {get; set;}
-
-}
-public class ReservationHandler{
+public record LogRecord(DateTime TimeStamp, string ReserverName, string roomName);
+public class ReservationHandler{ // This class should have used an interface instead of using an object of another class. Using an object from the Reservation class is against DI.
+// This class is against the Single Responsibility Principle because it does the job of both adding and removing reservations and printing weekly reservations. According to this principle, each class has a single task.
+//The use of SRP and DI is important because it increases the understandability and ease of implementation of the code (reduces its complexity).
 private  Reservation[,] reservations;
 public ReservationHandler(){
     reservations = new Reservation[7,8];
@@ -108,14 +106,7 @@ public void WeeklySchedule(){
 }
 
 
-public class Reservation{
-public  DateTime time{get; set;}
-public   DateTime date{get; set;}
-
-public string reserverName{get; set;}
-
-public Room room {get; set;}
-}
+public record Reservation(DateTime time, DateTime date, string reserverName, Room room);
 
 class Program {
 
