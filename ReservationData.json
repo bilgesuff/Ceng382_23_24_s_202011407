@@ -1,0 +1,22 @@
+[
+  {
+    "time": "2024-04-14T04:17:59.3226866+03:00",
+    "date": "2024-04-13T00:00:00+03:00",
+    "reserverName": "Bilge",
+    "room": {
+      "roomId": "003",
+      "roomName": "A-103",
+      "capacity": 26
+    }
+  },
+  {
+    "time": "2024-04-14T00:19:17.0193621+03:00",
+    "date": "2024-04-13T00:00:00+03:00",
+    "reserverName": "Oyku",
+    "room": {
+      "roomId": "012",
+      "roomName": "A-112",
+      "capacity": 44
+    }
+  }
+]
