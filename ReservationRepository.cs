@@ -7,16 +7,17 @@ public class ReservationRepository : IReservationRepository
 {
     private List<Reservation> _reservations = new List<Reservation>();
     private ILogger _logger;
-    private string _dataFilePath = "ReservationData.json"; 
+    private string _dataFilePath;
+
     public ReservationRepository(ILogger logger, string dataFilePath)
     {
         _dataFilePath = dataFilePath;
         _logger = logger;
-        LoadReservations(); 
+        LoadReservations();
     }
 
-   private void LoadReservations()
-  {
+ private void LoadReservations()
+{
     if (File.Exists(_dataFilePath))
     {
         string json = File.ReadAllText(_dataFilePath);
@@ -28,7 +29,8 @@ public class ReservationRepository : IReservationRepository
             }
             catch (JsonException ex)
             {
-                //_logger.Log($"Error deserializing JSON: {ex.Message}");
+                var logRecord = new LogRecord(DateTime.Now, "Error", $"Error deserializing JSON: {ex.Message}");
+                _logger.Log(logRecord);
                 _reservations = new List<Reservation>();
             }
         }
@@ -37,7 +39,7 @@ public class ReservationRepository : IReservationRepository
             _reservations = new List<Reservation>();
         }
     }
-  }
+}
 
 
     private void SaveReservations()
@@ -45,21 +47,30 @@ public class ReservationRepository : IReservationRepository
         string json = JsonSerializer.Serialize(_reservations, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(_dataFilePath, json);
     }
+
     public void AddReservation(Reservation reservation)
     {
         _reservations.Add(reservation);
-        SaveReservations(); 
+        SaveReservations();
         _logger.Log(new LogRecord(DateTime.Now, reservation.reserverName, reservation.room.RoomName));
     }
 
     public void DeleteReservation(Reservation reservation)
     {
         _reservations.Remove(reservation);
-        SaveReservations(); 
+        SaveReservations();
         _logger.Log(new LogRecord(DateTime.Now, reservation.reserverName, reservation.room.RoomName));
     }
+
     public List<Reservation> GetAllReservations()
     {
-        return _reservations;
+        // Using System.Text.Json consistently
+        if (File.Exists(_dataFilePath))
+        {
+            string json = File.ReadAllText(_dataFilePath);
+            return JsonSerializer.Deserialize<List<Reservation>>(json) ?? new List<Reservation>();
+        }
+        return new List<Reservation>();
     }
 }
+

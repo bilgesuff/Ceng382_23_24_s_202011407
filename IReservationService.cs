@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 public interface IReservationService
 {
-    void AddReservation(Reservation reservation, string reserverName);
+    void AddReservation(Reservation reservation,string reserverName);
     void DeleteReservation(Reservation reservation);
     void DisplayWeeklySchedule();
 }

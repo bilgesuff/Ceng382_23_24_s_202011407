@@ -6,14 +6,13 @@ using System.Text.Json.Serialization;
 
 public class RoomHandler
 {
-     private string _filePath;
+     private static string? _filePath;
 
-    public RoomHandler(string filePath)
-    {
-        _filePath = filePath;
+      public RoomHandler(string filePath) {
+        _filePath = filePath ?? throw new ArgumentNullException(nameof(filePath)); 
     }
 
-   public List<Room> GetRooms()
+   public static List<Room> GetRooms()
 {
     try
     {
@@ -27,7 +26,13 @@ public class RoomHandler
     }
 }
 
+    public static List<string> GetRoomByNameId(string roomId){
+        List<Room> rooms= GetRooms();
+        var matching_rooms = rooms.Where(r => r.romId == roomId).Select(r => r.RoomName).ToList();
+        return matching_rooms;
+        
 
+        }
     public void SaveRooms(List<Room> rooms)
     {
         var roomsJson = JsonSerializer.Serialize(rooms, new JsonSerializerOptions { WriteIndented = true });

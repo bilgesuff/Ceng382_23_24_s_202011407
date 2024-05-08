@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
 
 public class ReservationHandler
 {
@@ -15,11 +16,12 @@ public class ReservationHandler
         _logHandler = logHandler;
         _roomHandler = roomHandler; 
     }
-    public void AddReservation(Reservation reservation, string reserverName)
-    {        
-        _reservationRepository.AddReservation(reservation);        
-        _logHandler.AddLog(new LogRecord(DateTime.Now, reserverName, reservation.room.RoomName));
-    }
+   public void AddReservation(Reservation reservation){
+
+  _reservationRepository.AddReservation(reservation);
+   var log = new LogRecord(DateTime.Now,reservation.reserverName, $"Added Reservation: {reservation.room.RoomName}");
+  _logHandler.AddLog(log);
+}
     public void DeleteReservation(Reservation reservation)
     {        
         _reservationRepository.DeleteReservation(reservation);
@@ -29,10 +31,13 @@ public class ReservationHandler
     {
         return _reservationRepository.GetAllReservations();
     }
-    public List<Room> GetRooms()
-    {        
-        return _roomHandler.GetRooms();
-    }
+   public List<Room> GetRooms(){
+      string jsonFilePath = "Data.json"; 
+      string jsonString = File.ReadAllText(jsonFilePath);
+      var roomData = JsonSerializer.Deserialize<RoomData>(jsonString);
+      return roomData?.Rooms.ToList() ?? new List<Room>();
+   }
+
     public void SaveRooms(List<Room> rooms)
     {        
         _roomHandler.SaveRooms(rooms);
