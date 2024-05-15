@@ -9,39 +9,47 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = labProject
 build_property.RootNamespace = labProject
-build_property.ProjectDir = C:\Users\bilge\OneDrive\Masaüstü\lab9\Ceng382_23_24_s_202011407\labProject\
+build_property.ProjectDir = C:\Users\ASUS\Desktop\lab10\Ceng382_23_24_s_202011407\labProject\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\bilge\OneDrive\Masaüstü\lab9\Ceng382_23_24_s_202011407\labProject
+build_property.MSBuildProjectDirectory = C:\Users\ASUS\Desktop\lab10\Ceng382_23_24_s_202011407\labProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/bilge/OneDrive/Masaüstü/lab9/Ceng382_23_24_s_202011407/labProject/Pages/Error.cshtml]
+[C:/Users/ASUS/Desktop/lab10/Ceng382_23_24_s_202011407/labProject/Pages/CreateRooms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUm9vbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/lab10/Ceng382_23_24_s_202011407/labProject/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bilge/OneDrive/Masaüstü/lab9/Ceng382_23_24_s_202011407/labProject/Pages/Index.cshtml]
+[C:/Users/ASUS/Desktop/lab10/Ceng382_23_24_s_202011407/labProject/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bilge/OneDrive/Masaüstü/lab9/Ceng382_23_24_s_202011407/labProject/Pages/Privacy.cshtml]
+[C:/Users/ASUS/Desktop/lab10/Ceng382_23_24_s_202011407/labProject/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bilge/OneDrive/Masaüstü/lab9/Ceng382_23_24_s_202011407/labProject/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ASUS/Desktop/lab10/Ceng382_23_24_s_202011407/labProject/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bilge/OneDrive/Masaüstü/lab9/Ceng382_23_24_s_202011407/labProject/Pages/_ViewImports.cshtml]
+[C:/Users/ASUS/Desktop/lab10/Ceng382_23_24_s_202011407/labProject/Pages/ViewRooms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld1Jvb21zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/lab10/Ceng382_23_24_s_202011407/labProject/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bilge/OneDrive/Masaüstü/lab9/Ceng382_23_24_s_202011407/labProject/Pages/_ViewStart.cshtml]
+[C:/Users/ASUS/Desktop/lab10/Ceng382_23_24_s_202011407/labProject/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bilge/OneDrive/Masaüstü/lab9/Ceng382_23_24_s_202011407/labProject/Pages/Shared/_Layout.cshtml]
+[C:/Users/ASUS/Desktop/lab10/Ceng382_23_24_s_202011407/labProject/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-oked4m90uc

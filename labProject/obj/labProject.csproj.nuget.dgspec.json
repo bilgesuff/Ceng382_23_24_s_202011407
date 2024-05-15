@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab9\\Ceng382_23_24_s_202011407\\labProject\\labProject.csproj": {}
+    "C:\\Users\\ASUS\\Desktop\\lab10\\Ceng382_23_24_s_202011407\\labProject\\labProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab9\\Ceng382_23_24_s_202011407\\labProject\\labProject.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\lab10\\Ceng382_23_24_s_202011407\\labProject\\labProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab9\\Ceng382_23_24_s_202011407\\labProject\\labProject.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\lab10\\Ceng382_23_24_s_202011407\\labProject\\labProject.csproj",
         "projectName": "labProject",
-        "projectPath": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab9\\Ceng382_23_24_s_202011407\\labProject\\labProject.csproj",
-        "packagesPath": "C:\\Users\\bilge\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bilge\\OneDrive\\Masaüstü\\lab9\\Ceng382_23_24_s_202011407\\labProject\\obj\\",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\lab10\\Ceng382_23_24_s_202011407\\labProject\\labProject.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\lab10\\Ceng382_23_24_s_202011407\\labProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bilge\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -45,23 +45,23 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             }
           },
           "imports": [
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
