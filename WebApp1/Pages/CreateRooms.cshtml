@@ -1,0 +1,25 @@
+﻿@page
+@model MyApp.Namespace.CreateRoomsModel
+@{
+    ViewData["Title"] = "Create Rooms";
+}
+<head>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<section id="form-section">
+<form method="post" class="form">
+    <div class="form-group">
+        <label for="RoomName">Room Name:</label>
+        <input type="text" id="RoomName" name="NewRoom.RoomName">
+    </div>
+    <div class="form-group">
+        <label for="Capacity">Capacity:</label>
+        <input type="number" id="Capacity" name="NewRoom.Capacity">
+    </div>
+    <button type="submit" class="btn btn-primary">Create Room</button>
+
+</form>
+</section>
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}
