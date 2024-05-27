@@ -1,0 +1,55 @@
+﻿@page
+@model WebApp1.Pages.ShowReservationsModel
+@{
+    ViewData["Title"] = "Show Reservations";
+}
+
+<h1>Show Reservations</h1>
+
+<form method="get">
+    <div class="form-group">
+        <label for="RoomName">Room Name:</label>
+        <input type="text" id="RoomName" name="RoomName" class="form-control" value="@Model.RoomName" />
+    </div>
+    <div class="form-group">
+        <label for="StartDate">Start Date:</label>
+        <input type="date" id="StartDate" name="StartDate" class="form-control" type="date" value="@Model.StartDate />
+    </div>
+    <div class="form-group">
+        <label for="RoomCapacity">Room Capacity:</label>
+        <input type="number" id="RoomCapacity" name="RoomCapacity" class="form-control" value="@Model.RoomCapacity" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Time</th>
+            @foreach (var room in Model.Rooms)
+            {
+                <th>@room.RoomName</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (int hour = 9; hour < 18; hour++)
+        {
+            <tr>
+                <td>@hour:00</td>
+                @foreach (var room in Model.Rooms)
+                {
+                    <td>
+                        @if (Model.Reservations.Any(r => r.RoomId == room.Id && r.Time.Hour == hour))
+                        {
+                            var reservation = Model.Reservations.First(r => r.RoomId == room.Id && r.Time.Hour == hour);
+                            <span>@reservation.ReserverName</span>
+                            <a href="/EditReservation/@reservation.Id" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                            <a href="/DeleteReservation/@reservation.Id" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                        }
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
