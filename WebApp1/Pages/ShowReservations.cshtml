@@ -14,17 +14,17 @@
 </head>
 <body>
     <section class="form">
-        <h1 class="header1">Reservations</h1>
+        <h1 class="head1">Reservations</h1>
         <form method="get">
-            <div>
+            <div class ="rdc">
                 <label for="roomNameFilter">Name of Room:</label>
                 <input id="roomNameFilter" name="RoomNameFilter" type="text" class="form-control" value="@Model.RoomNameFilter">
             </div>
-            <div>
+            <div class ="rdc">
                 <label for="startDateFilter">Date:</label>
                 <input id="startDateFilter" name="StartDateFilter" type="date" class="form-control" value="@Model.StartDateFilter?.ToString("yyyy-MM-dd")">
             </div>
-            <div>
+            <div class ="rdc">
                 <label for="capacityFilter">Capacity:</label>
                 <input id="capacityFilter" name="CapacityFilter" type="number" class="form-control" value="@Model.CapacityFilter">
             </div>

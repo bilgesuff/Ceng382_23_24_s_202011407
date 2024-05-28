@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\css\\ShowReservation.css"
     },
     {
+      "Id": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\css\\ViewRooms.css",
+      "PackagePath": "staticwebassets\\css\\ViewRooms.css"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
       "Id": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
@@ -27,6 +35,10 @@
     {
       "Id": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\images\\f38306ab-2543-4e1b-815b-3f726833f5f0.webp",
+      "PackagePath": "staticwebassets\\images\\f38306ab-2543-4e1b-815b-3f726833f5f0.webp"
     },
     {
       "Id": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\js\\site.js",

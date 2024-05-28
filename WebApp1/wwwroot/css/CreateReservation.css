@@ -19,18 +19,18 @@ body, html {
     margin-bottom: 20px;
 }
 
-.form-group {
+.createform {
     margin-bottom: 15px;
 }
 
-.form-group label {
+.createform label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     color: #666666;
 }
 
-.form-group input {
+.createform input {
     width: 100%;
     padding: 8px;
     border: 1px solid #cccccc;
@@ -38,6 +38,7 @@ body, html {
     box-sizing: border-box;
 }
 .btn-primary:hover {
+    margin-top: 10px;
     color: #ffffff;
     background-color: #0056b3;
     border-color: #0056b3;

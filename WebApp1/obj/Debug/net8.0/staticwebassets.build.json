@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S8Jey6ksFY+NMLplETpuSIG7knNNwy4PqDOuGaGXSCg=",
+  "Hash": "nP/xsYkRlDh8JVIic10ySETFYc6JYcpLtWq/5ICgNTs=",
   "Source": "WebApp1",
   "BasePath": "_content/WebApp1",
   "Mode": "Default",
@@ -1214,6 +1214,25 @@
       "OriginalItemSpec": "wwwroot\\css\\CreateReservation.css"
     },
     {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\css\\index.css",
+      "SourceId": "WebApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\",
+      "BasePath": "_content/WebApp1",
+      "RelativePath": "css/index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\index.css"
+    },
+    {
       "Identity": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\css\\login.css",
       "SourceId": "WebApp1",
       "SourceType": "Discovered",
@@ -1290,6 +1309,25 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\css\\ViewRooms.css",
+      "SourceId": "WebApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\",
+      "BasePath": "_content/WebApp1",
+      "RelativePath": "css/ViewRooms.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ViewRooms.css"
+    },
+    {
       "Identity": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\favicon.ico",
       "SourceId": "WebApp1",
       "SourceType": "Discovered",
@@ -1307,6 +1345,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\images\\f38306ab-2543-4e1b-815b-3f726833f5f0.webp",
+      "SourceId": "WebApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\",
+      "BasePath": "_content/WebApp1",
+      "RelativePath": "images/f38306ab-2543-4e1b-815b-3f726833f5f0.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\f38306ab-2543-4e1b-815b-3f726833f5f0.webp"
     },
     {
       "Identity": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\js\\site.js",
