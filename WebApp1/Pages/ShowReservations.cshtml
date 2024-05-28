@@ -1,55 +1,100 @@
 ﻿@page
-@model WebApp1.Pages.ShowReservationsModel
+@model MyApp.Namespace.ShowReservationsModel
 @{
-    ViewData["Title"] = "Show Reservations";
+    ViewData["Title"] = "Reservations";
 }
 
-<h1>Show Reservations</h1>
-
-<form method="get">
-    <div class="form-group">
-        <label for="RoomName">Room Name:</label>
-        <input type="text" id="RoomName" name="RoomName" class="form-control" value="@Model.RoomName" />
-    </div>
-    <div class="form-group">
-        <label for="StartDate">Start Date:</label>
-        <input type="date" id="StartDate" name="StartDate" class="form-control" type="date" value="@Model.StartDate />
-    </div>
-    <div class="form-group">
-        <label for="RoomCapacity">Room Capacity:</label>
-        <input type="number" id="RoomCapacity" name="RoomCapacity" class="form-control" value="@Model.RoomCapacity" />
-    </div>
-    <button type="submit" class="btn btn-primary">Filter</button>
-</form>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Time</th>
-            @foreach (var room in Model.Rooms)
-            {
-                <th>@room.RoomName</th>
-            }
-        </tr>
-    </thead>
-    <tbody>
-        @for (int hour = 9; hour < 18; hour++)
-        {
-            <tr>
-                <td>@hour:00</td>
-                @foreach (var room in Model.Rooms)
-                {
-                    <td>
-                        @if (Model.Reservations.Any(r => r.RoomId == room.Id && r.Time.Hour == hour))
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Reservations</title>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/ShowReservation.css">
+</head>
+<body>
+    <section class="form">
+        <h1 class="header1">Reservations</h1>
+        <form method="get">
+            <div>
+                <label for="roomNameFilter">Name of Room:</label>
+                <input id="roomNameFilter" name="RoomNameFilter" type="text" class="form-control" value="@Model.RoomNameFilter">
+            </div>
+            <div>
+                <label for="startDateFilter">Date:</label>
+                <input id="startDateFilter" name="StartDateFilter" type="date" class="form-control" value="@Model.StartDateFilter?.ToString("yyyy-MM-dd")">
+            </div>
+            <div>
+                <label for="capacityFilter">Capacity:</label>
+                <input id="capacityFilter" name="CapacityFilter" type="number" class="form-control" value="@Model.CapacityFilter">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+            <div>
+                <label for="weekSelect">Weeks:</label>
+                <select id="weekSelect" name="SelectedWeek" class="form-control" onchange="this.form.submit()">
+                    @foreach (var week in Model.Weeks)
+                    {
+                        if (week == Model.SelectedWeek)
                         {
-                            var reservation = Model.Reservations.First(r => r.RoomId == room.Id && r.Time.Hour == hour);
-                            <span>@reservation.ReserverName</span>
-                            <a href="/EditReservation/@reservation.Id" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
-                            <a href="/DeleteReservation/@reservation.Id" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                            <option value="@week.ToString("yyyy-MM-dd")" selected>@week.ToString("dd MMM yyyy") - @week.AddDays(6).ToString("dd MMM yyyy")</option>
                         }
-                    </td>
-                }
+                        else
+                        {
+                            <option value="@week.ToString("yyyy-MM-dd")">@week.ToString("dd MMM yyyy") - @week.AddDays(6).ToString("dd MMM yyyy")</option>
+                        }
+                    }
+                </select>
+            </div>
+        </form>
+    </section>
+
+    <table class="timetable">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @for (int hour = 9; hour < 18; hour++)
+            {
+                <tr>
+                    <td>@hour:00</td>
+                    @for (int day = 0; day < 7; day++)
+                    {
+                        var currentDate = Model.SelectedWeek.AddDays(day).ToString("yyyy-MM-dd");
+                        <td>
+                            @if (Model.WeeklyReservations.ContainsKey(currentDate) && Model.WeeklyReservations[currentDate].Any(r => r.Time.Hour == hour))
+                            {
+                                @foreach (var reservation in Model.WeeklyReservations[currentDate].Where(r => r.Time.Hour == hour))
+                                {
+                                    <div>
+                                        Room: @reservation.Room.RoomName <br />
+                                        Reserver: @reservation.ReserverName <br />
+                                        Time: @reservation.Time.ToString("HH:mm") <br />
+                                        <div class="actions">
+                                            <form method="post" asp-page-handler="Edit">
+                                                <input type="hidden" name="id" value="@reservation.Id" />
+                                                <button type="submit" class="btn btn-primary">Edit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                }
+                            }
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

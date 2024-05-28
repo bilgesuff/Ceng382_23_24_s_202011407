@@ -1,0 +1,46 @@
+﻿@page "{id:int}"
+@model MyApp.Namespace.EditReservationModel
+@{
+   ViewData["Title"] = "Edit Reservation";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Reservation</title>
+    <link rel="stylesheet" href="~/css/site.css">
+   
+</head>
+<body>
+    <section class="form">
+        <h1 class="header1">Edit Reservation</h1>
+        <form id="editReservationForm" method="post">
+           <input type="hidden" asp-for="Reservation.Id" />
+            <div class="form-group">
+                <label asp-for="Reservation.ReserverName"></label>
+                <input asp-for="Reservation.ReserverName" class="form-control" />
+                <span asp-validation-for="Reservation.ReserverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.RoomId"></label>
+                   <select asp-for="Reservation.RoomId" class="form-control">
+                    @foreach (var room in Model.RoomsList)
+                    {
+                        if (room.Id == Model.Reservation.RoomId)
+                        {
+                            <option value="@room.Id" selected>@room.RoomName</option>
+                        }
+                        else
+                        {
+                            <option value="@room.Id">@room.RoomName</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="Reservation.RoomId" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </section>
+    </body>
+    </html>

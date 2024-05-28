@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using WebApp1.Models;
 using WebApp1.Data;
 
-namespace WebApp1.Pages
+namespace MyApp.Namespace
 {
     public class ShowReservationsModel : PageModel
     {
@@ -19,41 +19,87 @@ namespace WebApp1.Pages
             _context = context;
         }
 
-        public IList<Reservation> Reservations { get; set; }
-        public IList<Room> Rooms { get; set; }
+        public IList<Reservation> ReservationsList { get; set; }
+        public Dictionary<string, List<Reservation>> WeeklyReservations { get; set; }
+        public List<DateTime> Weeks { get; set; }
 
         [BindProperty(SupportsGet = true)]
-        public string RoomName { get; set; }
+        public DateTime SelectedWeek { get; set; }
+
         [BindProperty(SupportsGet = true)]
-        public DateTime? StartDate { get; set; }
+        public string RoomNameFilter { get; set; }
+        
         [BindProperty(SupportsGet = true)]
-        public DateTime? EndDate { get; set; }
+        public DateTime? StartDateFilter { get; set; }
+        
         [BindProperty(SupportsGet = true)]
-        public int? RoomCapacity { get; set; }
+        public DateTime? EndDateFilter { get; set; }
+        
+        [BindProperty(SupportsGet = true)]
+        public int? CapacityFilter { get; set; }
 
         public async Task OnGetAsync()
         {
-            Rooms = await _context.Rooms.ToListAsync();
-
-            var reservationsQuery = _context.Reservations.Include(r => r.Room).AsQueryable();
-
-            if (!string.IsNullOrEmpty(RoomName))
+            // Varsayılan olarak bu haftayı seç
+            if (SelectedWeek == default)
             {
-                reservationsQuery = reservationsQuery.Where(r => r.Room.RoomName.Contains(RoomName));
+                SelectedWeek = DateTime.Now.StartOfWeek(DayOfWeek.Monday);
             }
 
-          if (StartDate.HasValue)
+            // Haftalık rezervasyonları getir
+            var reservationsQuery = _context.Reservations
+                .Include(r => r.Room)
+                .Where(r => r.Room.IsDeleted == false && r.Time >= SelectedWeek && r.Time < SelectedWeek.AddDays(7));
+
+            if (!string.IsNullOrEmpty(RoomNameFilter))
             {
-                reservationsQuery = reservationsQuery.Where(r => r.Time.Date >= StartDate.Value);
+                reservationsQuery = reservationsQuery.Where(r => r.Room.RoomName.Contains(RoomNameFilter));
             }
 
-            if (RoomCapacity.HasValue)
+            if (StartDateFilter.HasValue)
             {
-                reservationsQuery = reservationsQuery.Where(r => r.Room.Capacity >= RoomCapacity.Value);
+                reservationsQuery = reservationsQuery.Where(r => r.Time.Date >= StartDateFilter.Value);
             }
 
-            Reservations = await reservationsQuery.ToListAsync();
+            if (CapacityFilter.HasValue)
+            {
+                reservationsQuery = reservationsQuery.Where(r => r.Room.Capacity >= CapacityFilter.Value);
+            }
+
+            ReservationsList = await reservationsQuery.ToListAsync();
+
+            WeeklyReservations = ReservationsList
+                .GroupBy(r => r.Time.Date.ToString("yyyy-MM-dd"))
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+           
+            Weeks = new List<DateTime>();
+            for (int i = -4; i <= 4; i++)
+            {
+                Weeks.Add(DateTime.Now.StartOfWeek(DayOfWeek.Monday).AddDays(i * 7));
+            }
+        }
+
+
+
+        public async Task<IActionResult> OnPostEditAsync(int id)
+        {
+            var reservation = await _context.Reservations.FindAsync(id);
+            if (reservation == null)
+            {
+                return NotFound();
+            }
+
+            return RedirectToPage("/EditReservation", new { id = reservation.Id });
+        }
+    }
+
+    public static class DateTimeExtensions
+    {
+        public static DateTime StartOfWeek(this DateTime dt, DayOfWeek startOfWeek)
+        {
+            int diff = (7 + (dt.DayOfWeek - startOfWeek)) % 7;
+            return dt.AddDays(-1 * diff).Date;
         }
     }
 }
-
