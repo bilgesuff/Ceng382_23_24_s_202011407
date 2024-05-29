@@ -21,8 +21,18 @@ namespace MyApp.Namespace
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid || NewRoom == null)
+            if (!ModelState.IsValid || NewRoom == null || string.IsNullOrWhiteSpace(NewRoom.RoomName) || NewRoom.Capacity <= 0)
             {
+                if (string.IsNullOrWhiteSpace(NewRoom.RoomName))
+                {
+                    ModelState.AddModelError("NewRoom.RoomName", "Room name is required.");
+                }
+
+                if (NewRoom.Capacity <= 0)
+                {
+                    ModelState.AddModelError("NewRoom.Capacity", "Capacity must be greater than 0.");
+                }
+
                 return Page();
             }
 

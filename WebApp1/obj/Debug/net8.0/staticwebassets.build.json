@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nP/xsYkRlDh8JVIic10ySETFYc6JYcpLtWq/5ICgNTs=",
+  "Hash": "DwGycNF2hlzR2Ro56GEGFM6/xNS/jQXk6yQJQCJ0r5s=",
   "Source": "WebApp1",
   "BasePath": "_content/WebApp1",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\index.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\css\\Index1.css",
+      "SourceId": "WebApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\",
+      "BasePath": "_content/WebApp1",
+      "RelativePath": "css/Index1.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Index1.css"
     },
     {
       "Identity": "C:\\Users\\ASUS\\Desktop\\lab11\\Ceng382_23_24_s_202011407\\WebApp1\\wwwroot\\css\\login.css",
